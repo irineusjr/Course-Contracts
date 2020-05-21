@@ -21,13 +21,19 @@ namespace Contracts
                 double totalValue = double.Parse(Console.ReadLine(),CultureInfo.InvariantCulture);
                 Console.Write("Enter number of installments: ");
                 int numberOfInstallments = int.Parse(Console.ReadLine());
+                if (numberOfInstallments < 1)
+                {
+                    throw new DomainException("Número de parcelas deve ser maior ou igual a 1");
+                }
+                else
+                {
+                    Contract contract = new Contract(number, date, totalValue);
+                    ProcessingService processingService = new ProcessingService(new PayPalService());
 
-                Contract contract = new Contract(number, date, totalValue);
-                ProcessingService processingService = new ProcessingService(numberOfInstallments, new PayPalService(1.0,2.0));
+                    processingService.ProcessContract(contract, numberOfInstallments);
 
-                processingService.ProcessContract(contract);
-
-                Console.WriteLine(contract);
+                    Console.WriteLine(contract);
+                }
             }
             catch (DomainException e)
             {
