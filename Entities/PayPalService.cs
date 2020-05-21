@@ -17,15 +17,9 @@ namespace Contracts.Entities
 
         public double ProcessPayment(double value, DateTime contractDate, DateTime dueDate)
         {
-            int monthNumber;
-            if (dueDate.Year == contractDate.Year)
-            {
-                monthNumber = dueDate.Month - contractDate.Month;
-            }
-            else
-            {
-                monthNumber = dueDate.Month + ((dueDate.Year - contractDate.Year)*12) - contractDate.Month;
-            }
+            int monthNumber = dueDate.Year == contractDate.Year
+                ? dueDate.Month - contractDate.Month
+                : dueDate.Month + ((dueDate.Year - contractDate.Year)*12) - contractDate.Month;
             double paymentValue = value * (1 + ((MonthlyInterest / 100) * monthNumber));
             paymentValue += paymentValue * (PaymentFee / 100);
             return paymentValue;
