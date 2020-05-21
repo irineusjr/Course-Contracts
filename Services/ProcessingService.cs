@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Contracts.Entities;
+﻿using Contracts.Entities;
 using Contracts.Entities.Exceptions;
 
 namespace Contracts.Services

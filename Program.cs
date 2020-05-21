@@ -27,7 +27,7 @@ namespace Contracts
 
                 processingService.ProcessContract(contract);
 
-                Console.WriteLine(contract.ToString());
+                Console.WriteLine(contract);
             }
             catch (DomainException e)
             {
