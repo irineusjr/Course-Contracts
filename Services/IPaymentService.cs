@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace Contracts.Entities
+namespace Contracts.Services
 {
     interface IPaymentService
     {

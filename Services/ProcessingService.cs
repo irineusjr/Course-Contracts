@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Contracts.Entities;
 using Contracts.Entities.Exceptions;
 
-namespace Contracts.Entities
+namespace Contracts.Services
 {
     class ProcessingService
     {

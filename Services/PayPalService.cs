@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Contracts.Entities
+namespace Contracts.Services
 {
     class PayPalService : IPaymentService
     {
